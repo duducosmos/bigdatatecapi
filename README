@@ -1,0 +1,25 @@
+Twipiniquim
+=========
+
+Computação cognitiva que entende as diversidades regionais e culturais brasileira
+
+DISCLAIMER
+    Modulo para acessar a api de analise de sentimentos de textos curtos e postagem em 
+    redes sociais escritas em português brasileiro
+
+    Este software pode ser usado, copiado, ou redistribuido contanto que ele
+    não seja vendido e esta nota de copyright precisa ser reproduzida em 
+    cada cópia feita. Esta rotina é fornecido como é, sem qualquer expressa ou implícita
+    garantia de qualquer forma .
+
+
+INSTALL:
+    python setup.py install
+    
+    
+DOC: 
+    For more information an how to use see: 
+
+AUTHOR
+    Eduardo S. Pereira
+    email: pereira.somoza@gmail.com
