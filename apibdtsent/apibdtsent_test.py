@@ -14,7 +14,7 @@ class TestGetSentTweets(unittest.TestCase):
 
     def setUp(self):
         self.keyWord = 'filme'
-        self.localHost = True
+        self.localHost = False
         if(self.localHost):
            print("Running local host")
 
