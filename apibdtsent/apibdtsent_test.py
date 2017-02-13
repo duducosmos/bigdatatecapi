@@ -7,22 +7,23 @@ _date = "26/05/2016"
 import unittest
 from apibdtsent import Apibdtsent
 import json
+import datetime
 
 
 class TestGetSentTweets(unittest.TestCase):
 
     def setUp(self):
         self.keyWord = 'filme'
-        self.localHost = False
-        # if(self.localHost):
-        #    print("Running local host")
+        self.localHost = True
+        if(self.localHost):
+           print("Running local host")
 
-        self.apiId = 'xxxxxxx',
-        self.secretKey = 'xxxxxxxxxxxxxxx'
+        self.apiId = '140304980380',
+        self.secretKey = 'e722d4016ed21759081bc53ff70629b29054d1144b30ba9b'
 
         #self.apiId = '253071546838',
         #self.secretKey ='c40b96499dbcb88ce6b59a3584adb1568f865a6f75104d0b'
-        self.testMode = 1
+        self.testMode = 0
 
         self.tweetsSent = Apibdtsent(apiID=self.apiId,
                                      secretKey=self.secretKey,
@@ -101,7 +102,10 @@ class TestGetSentTweets(unittest.TestCase):
         keyWord = self.keyWord
         expected = {u'positivo': 82}
         actual = self.tweetsSent.sentFromKey(keyWord, testMode=self.testMode)
-        self.assertDictContainsSubset(expected, actual['sent']['2016-Nov-04'])
+        mydate = datetime.datetime.now()
+        currentDate = mydate.strftime("%Y-%b-%d")
+
+        self.assertDictContainsSubset(expected, actual['sent'][currentDate])
 
     def test_sentFomKeyLocation(self):
         keyWord = self.keyWord
@@ -113,7 +117,10 @@ class TestGetSentTweets(unittest.TestCase):
         expected = {u'positivo': 82}
         actual = self.tweetsSent.sentFromKey(keyWord, lat, lng, raio,
                                              testMode=self.testMode)
-        self.assertDictContainsSubset(expected, actual['sent']['2016-Nov-04'])
+        
+        mydate = datetime.datetime.now()
+        currentDate = mydate.strftime("%Y-%b-%d")
+        self.assertDictContainsSubset(expected, actual['sent'][currentDate])
 
     def test_getSentTweets(self):
         result = {u'message': u'POST'}

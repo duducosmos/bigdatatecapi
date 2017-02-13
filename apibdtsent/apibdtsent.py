@@ -26,7 +26,7 @@ class Apibdtsent:
         if(localHost):
             self.__enderecoApi = 'http://localhost:8000/init/default/api/sent.json'
         else:
-            self.__enderecoApi = 'http://api.bigdatatec.com/init/default/api/sent.json'
+            self.__enderecoApi = 'http://www.bigdatatec.com:80/init/default/api/sent.json'
 
     def getSentFromText(self, text,
                         listOfNegativeWords=None,
